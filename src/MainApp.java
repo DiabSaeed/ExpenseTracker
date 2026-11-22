@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class MainApp {
     public static void main(String[] args) {
-
+        Scanner choose = new Scanner(System.in);
         String choice = "Go";
-        while (choice.strip().toLowerCase() != "exit") {
+        while (!choice.strip().equalsIgnoreCase("exit")) {
             System.out.println("""
                 ========== EXPENSE TRACKER ==========
 
@@ -15,10 +15,9 @@ public class MainApp {
                 5. Find Highest Expense
                 6. Exit
                 """);
-            Scanner choose = new Scanner(System.in);
             System.out.println("Enter Your Choice");
-
             choice = choose.nextLine();
         }
+        choose.close();
     }
 }
